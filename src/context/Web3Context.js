@@ -32,9 +32,9 @@ const Web3ContextProvider = (props) => {
 	}, [network]);
 
 	const { web3, contract } = useMemo(() => {
-		const web3 = new Web3(provider || "ALCHEMY PROVIDER");
-		const contract = new web3.eth.Contract(abi.abi, "CONTRACT_ADDRESS");
-
+		const web3 = new Web3(provider || "https://polygon-rpc.com");
+		// const contract = new web3.eth.Contract(abi.abi, "CONTRACT_ADDRESS");
+		let contract;
 		return { web3, contract };
 	}, [provider]);
 
