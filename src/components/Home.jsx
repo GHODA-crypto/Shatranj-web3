@@ -1,11 +1,5 @@
-import HomeSVG from "../assets/home.svg";
-
 const Home = () => {
-	return (
-		<div style={{ textAlign: "center" }}>
-			<img src={HomeSVG} alt="" />
-		</div>
-	);
+	return <div style={{ textAlign: "center" }}>Home</div>;
 };
 
 export default Home;

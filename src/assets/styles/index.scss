@@ -21,7 +21,6 @@ body {
 	nav {
 		position: sticky;
 		top: 0;
-		background: #fdfaf7 url("../assets/nav-ribbon.png") repeat-x;
 		background-size: cover;
 		image-rendering: -webkit-optimize-contrast;
 		transition: all 0.3s ease-in-out;
@@ -130,7 +129,7 @@ footer {
 	height: 4rem;
 	width: 100%;
 	position: relative;
-	background: #fdfaf7 url("../assets/footer-ribbon.png") repeat-x;
+
 	background-size: contain;
 	image-rendering: -webkit-optimize-contrast;
 

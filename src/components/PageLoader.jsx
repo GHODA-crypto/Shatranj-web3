@@ -1,4 +1,4 @@
-import LoadingPageSVG from "../assets/loading-page.svg";
+import LoadingPageSVG from "../assets/loading/loading-page.svg";
 
 const PageLoader = () => {
 	return (

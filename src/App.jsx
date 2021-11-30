@@ -7,38 +7,36 @@ import NotFound from "./components/NotFound";
 import PageLoader from "./components/PageLoader";
 
 // Styles
-import "./styles/App.scss";
-
+import Web3ContextProvider from "./context/Web3Context";
 const Home = lazy(() => import("./components/Home"));
 
 const App = () => {
-    return (
-        <Web3ContextProvider>
-            <Navbar />
-            <main>
-                <Routes>
-                    <Route path='/'>
-                        <Route
-                            exact
-                            path=''
-                            element={
-                                <Suspense fallback={<PageLoader />}>
-                                    <Home />
-                                </Suspense>
-                            }
-                        />
+	return (
+		<Web3ContextProvider>
+			<main>
+				<Routes>
+					<Route path="/">
+						<Route
+							exact
+							path=""
+							element={
+								<Suspense fallback={<PageLoader />}>
+									<Home />
+								</Suspense>
+							}
+						/>
 
-                        <Route exact path='404' element={<NotFound />} />
-                        <Route path='*' element={<Navigate to='/404' />} />
-                    </Route>
-                </Routes>
-            </main>
+						<Route exact path="404" element={<NotFound />} />
+						<Route path="*" element={<Navigate to="/404" />} />
+					</Route>
+				</Routes>
+			</main>
 
-            <footer>
-                <div>Shatranj - BUIDLT with Respect</div>
-            </footer>
-        </Web3ContextProvider>
-    );
+			<footer>
+				<div>Shatranj - BUIDLT with Respect</div>
+			</footer>
+		</Web3ContextProvider>
+	);
 };
 
 export default App;
