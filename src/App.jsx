@@ -5,6 +5,7 @@ import { lazy, Suspense } from "react";
 // Components
 import NotFound from "./components/NotFound";
 import PageLoader from "./components/PageLoader";
+import Game from "./components/Game";
 
 // Styles
 import Web3ContextProvider from "./context/Web3Context";
@@ -26,6 +27,7 @@ const App = () => {
 							}
 						/>
 
+						<Route path="/game" element={<Game />} />
 						<Route exact path="404" element={<NotFound />} />
 						<Route path="*" element={<Navigate to="/404" />} />
 					</Route>
