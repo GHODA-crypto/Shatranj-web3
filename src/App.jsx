@@ -9,34 +9,28 @@ import Game from "./components/Game";
 
 // Styles
 import Web3ContextProvider from "./context/Web3Context";
-const Home = lazy(() => import("./components/Home"));
+const Lobby = lazy(() => import("./components/Lobby"));
 
 const App = () => {
 	return (
 		<Web3ContextProvider>
-			<main>
-				<Routes>
-					<Route path="/">
-						<Route
-							exact
-							path=""
-							element={
-								<Suspense fallback={<PageLoader />}>
-									<Home />
-								</Suspense>
-							}
-						/>
+			<Routes>
+				<Route path="/">
+					<Route
+						exact
+						path=""
+						element={
+							<Suspense fallback={<PageLoader />}>
+								<Lobby />
+							</Suspense>
+						}
+					/>
 
-						<Route path="/game" element={<Game />} />
-						<Route exact path="404" element={<NotFound />} />
-						<Route path="*" element={<Navigate to="/404" />} />
-					</Route>
-				</Routes>
-			</main>
-
-			<footer>
-				<div>Shatranj - BUIDLT with Respect</div>
-			</footer>
+					<Route path="/game" element={<Game />} />
+					<Route exact path="404" element={<NotFound />} />
+					<Route path="*" element={<Navigate to="/404" />} />
+				</Route>
+			</Routes>
 		</Web3ContextProvider>
 	);
 };

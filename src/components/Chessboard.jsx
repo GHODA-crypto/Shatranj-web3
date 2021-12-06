@@ -109,7 +109,7 @@ export default function Board({ boardWidth }) {
 	}
 
 	return (
-		<div>
+		<div className="board">
 			<Chessboard
 				id="SquareStyles"
 				arePremovesAllowed={true}
@@ -132,29 +132,31 @@ export default function Board({ boardWidth }) {
 				}}
 				ref={chessboardRef}
 			/>
-			<button
-				className="rc-button"
-				onClick={() => {
-					safeGameMutate((game) => {
-						game.reset();
-					});
-					chessboardRef.current.clearPremoves();
-					setMoveSquares({});
-					setRightClickedSquares({});
-				}}>
-				reset
-			</button>
-			<button
-				className="rc-button"
-				onClick={() => {
-					safeGameMutate((game) => {
-						game.undo();
-					});
-					chessboardRef.current.clearPremoves();
-					setMoveSquares({});
-				}}>
-				undo
-			</button>
+			{/* <div className="board-btns">
+				<button
+					className="rc-button reset"
+					onClick={() => {
+						safeGameMutate((game) => {
+							game.reset();
+						});
+						chessboardRef.current.clearPremoves();
+						setMoveSquares({});
+						setRightClickedSquares({});
+					}}>
+					reset
+				</button>
+				<button
+					className="rc-button undo"
+					onClick={() => {
+						safeGameMutate((game) => {
+							game.undo();
+						});
+						chessboardRef.current.clearPremoves();
+						setMoveSquares({});
+					}}>
+					undo
+				</button>
+			</div> */}
 		</div>
 	);
 }
